@@ -13,6 +13,7 @@ build/
 !default.xcworkspace
 xcuserdata
 profile
+*.tmproj
 *.moved-aside
 DerivedData
 .idea/
