@@ -1,0 +1,130 @@
+//
+//  NSView+Extensions.m
+//
+//  Created by Elmar Tampe on 28.04.13.
+//  Copyright (c) 2013 Elmar Tampe. All rights reserved.
+//
+
+#import "NSView+Extensions.h"
+
+@implementation NSView (Extensions)
+
+// ------------------------------------------------------------------------------------------
+#pragma mark - Left
+// ------------------------------------------------------------------------------------------
+- (CGFloat)left
+{
+	return self.frame.origin.x;	
+}
+
+
+- (void)setLeft:(CGFloat)left
+{
+	NSRect rect = self.frame;
+	rect.origin.x = left;
+	self.frame = rect;
+}
+
+
+// ------------------------------------------------------------------------------------------
+#pragma mark - Right
+// ------------------------------------------------------------------------------------------
+- (CGFloat)right
+{
+	return self.frame.origin.x + self.frame.size.width;	
+}
+
+
+- (void)setRight:(CGFloat)right
+{
+	NSRect rect = self.frame;
+	rect.origin.x = right - rect.size.width;
+	self.frame = rect;
+}
+
+
+// ------------------------------------------------------------------------------------------
+#pragma mark - Top
+// ------------------------------------------------------------------------------------------
+- (CGFloat)top
+{
+	return self.frame.origin.y;	
+}
+
+
+- (void)setTop:(CGFloat)top
+{
+	NSRect rect = self.frame;
+	rect.origin.y = top - rect.size.height;
+	self.frame = rect;
+}
+
+
+// ------------------------------------------------------------------------------------------
+#pragma mark - Bottom
+// ------------------------------------------------------------------------------------------
+- (CGFloat)bottom
+{
+	return self.frame.origin.y + self.frame.size.height;	
+}
+
+
+- (void)setBottom:(CGFloat)bottom
+{
+	NSRect rect = self.frame;
+	rect.origin.y = bottom;
+	self.frame = rect;
+}
+
+
+// ------------------------------------------------------------------------------------------
+#pragma mark - Width
+// ------------------------------------------------------------------------------------------
+- (CGFloat)width
+{
+    return self.frame.size.width;
+}
+
+
+- (void)setWidth:(CGFloat)width
+{
+    NSRect rect = self.frame;
+    rect.size.width = width;
+    self.frame = rect;
+}
+
+
+// ------------------------------------------------------------------------------------------
+#pragma mark - Height
+// ------------------------------------------------------------------------------------------
+- (CGFloat)height
+{
+    return self.frame.size.height;
+}
+
+
+- (void)setHeight:(CGFloat)height
+{
+    NSRect rect = self.frame;
+    rect.size.height = height;
+    self.frame = rect;
+}
+
+
+// ------------------------------------------------------------------------------------------
+#pragma mark - Size
+// ------------------------------------------------------------------------------------------
+- (CGSize)size
+{
+    return self.frame.size;
+}
+
+
+- (void)setSize:(CGSize)size
+{
+    NSRect rect = self.frame;
+    rect.size = size;
+    self.frame = rect;
+}
+
+@end
