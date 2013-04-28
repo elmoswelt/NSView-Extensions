@@ -5,6 +5,8 @@
 //  Copyright (c) 2013 Elmar Tampe. All rights reserved.
 //
 
+#import <Cocoa/Cocoa.h>
+
 @interface NSView (Extensions)
 
 /** Sets the origin.x property of the view to left. */
