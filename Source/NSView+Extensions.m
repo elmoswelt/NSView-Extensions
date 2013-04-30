@@ -1,7 +1,7 @@
 //
 //  NSView+Extensions.m
 //
-//  Created by Elmar Tampe on 28.04.13.
+//  Created by Elmar Tampe && Kristijan Šimić on 28.04.13.
 //  Copyright (c) 2013 Elmar Tampe. All rights reserved.
 //
 
@@ -125,6 +125,47 @@
     NSRect rect = self.frame;
     rect.size = size;
     self.frame = rect;
+}
+
+
+// ------------------------------------------------------------------------------------------
+#pragma mark - center
+// ------------------------------------------------------------------------------------------
+- (NSPoint)center
+{
+    return NSMakePoint((self.frame.size.width / 2.0), (self.frame.size.height / 2.0));
+}
+
+
+// ------------------------------------------------------------------------------------------
+#pragma mark - Corner Coordinate
+// ------------------------------------------------------------------------------------------
+- (NSPoint)cornerCoordinateForType:(NSViewCornerCoordinateType)cornerType
+
+{
+    switch (cornerType)
+    {
+        case NSViewCornerCoordinateTypeTopLeft:
+        {
+            return NSMakePoint(self.bounds.origin.x, self.bounds.size.height);
+        }
+        case NSViewCornerCoordinateTypeTopRight:
+        {
+            return NSMakePoint(self.bounds.size.width, self.bounds.size.height);
+        }
+        case NSViewCornerCoordinateTypeBottomLeft:
+        {
+            return NSMakePoint(self.bounds.origin.x, self.bounds.origin.y);
+        }
+        case NSViewCornerCoordinateTypeBottomRight:
+        {
+            return NSMakePoint(self.bounds.size.width, self.bounds.origin.y);
+        }
+        default:
+		{
+			return NSZeroPoint;
+		}
+    }
 }
 
 @end
