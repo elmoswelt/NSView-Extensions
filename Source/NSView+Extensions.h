@@ -1,11 +1,20 @@
 //
 //  NSView+Extensions.h
+//  Created by Elmar Tampe && Kristijan Šimić on 28.04.13.
 //
-//  Created by Elmar Tampe on 28.04.13.
 //  Copyright (c) 2013 Elmar Tampe. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
+
+/** Coordinate types for a given view object. */
+typedef NS_ENUM(NSUInteger, NSViewCornerCoordinateType) 
+{
+    NSViewCornerCoordinateTypeTopLeft = 0,
+    NSViewCornerCoordinateTypeTopRight,
+    NSViewCornerCoordinateTypeBottomLeft,
+    NSViewCornerCoordinateTypeBottomRight,
+};
 
 @interface NSView (Extensions)
 
@@ -29,5 +38,11 @@
 
 /** Sets the size property of the view to 'size'. */
 @property (nonatomic, assign) CGSize size;
+
+/** Sets the center property of the view to 'center'. */
+@property (nonatomic, assign) CGPoint center;
+
+/** Returns the corner coordinate as a CGPoint for a given corner type. See 'NSViewCornerCoordinateType' */
+- (NSPoint)cornerCoordinateForType:(NSViewCornerCoordinateType)cornerType;
 
 @end
