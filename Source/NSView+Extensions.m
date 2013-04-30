@@ -141,7 +141,6 @@
 #pragma mark - Corner Coordinate
 // ------------------------------------------------------------------------------------------
 - (NSPoint)cornerCoordinateForType:(NSViewCornerCoordinateType)cornerType
-
 {
     switch (cornerType)
     {
