@@ -133,14 +133,17 @@
 // ------------------------------------------------------------------------------------------
 - (NSPoint)center
 {
-    return NSMakePoint((self.frame.size.width / 2.0), (self.frame.size.height / 2.0));
+    CGFloat centerX = self.frame.origin.x + (self.frame.size.width / 2.0)
+    CGFloat centerY = self.frame.origin.y + (self.frame.size.height / 2.0)
+    
+    return CGPointMake(centerX, centerY);
 }
 
 
 - (void)setCenter:(CGPoint)center
 {
-	CGFloat originX = self.frame.size.width - (self.frame.size.width / 2.0);
-	CGFloat originY = self.frame.size.height - (self.frame.size.height / 2.0);
+    CGFloat originX = center.x - (self.frame.size.width / 2.0);
+	CGFloat originY = center.y - (self.frame.size.height / 2.0);
 	
 	self.frame = NSMakeRect(originX, originY, self.frame.size.width, self.frame.size.height);
 }
