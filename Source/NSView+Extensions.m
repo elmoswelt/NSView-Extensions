@@ -133,8 +133,8 @@
 // ------------------------------------------------------------------------------------------
 - (NSPoint)center
 {
-    CGFloat centerX = self.frame.origin.x + (self.frame.size.width / 2.0)
-    CGFloat centerY = self.frame.origin.y + (self.frame.size.height / 2.0)
+    CGFloat centerX = self.frame.origin.x + (self.frame.size.width / 2.0);
+    CGFloat centerY = self.frame.origin.y + (self.frame.size.height / 2.0);
     
     return CGPointMake(centerX, centerY);
 }
